@@ -1,0 +1,106 @@
+/* SMPL-X Viewer — dark "technical instrument" theme.
+   Display: Bricolage Grotesque · Mono/readouts: IBM Plex Mono · Body: Familjen Grotesk */
+
+:root {
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-body: 'Familjen Grotesk', system-ui, sans-serif;
+  --accent: 188 95% 55%;
+  --accent-dim: 188 60% 42%;
+}
+
+.dark {
+  --background: 222 32% 7%;
+  --foreground: 210 24% 92%;
+  --card: 222 28% 10%;
+  --card-foreground: 210 24% 92%;
+  --popover: 222 30% 9%;
+  --popover-foreground: 210 24% 92%;
+  --primary: 188 95% 55%;
+  --primary-foreground: 222 47% 8%;
+  --secondary: 220 20% 16%;
+  --secondary-foreground: 210 24% 92%;
+  --muted: 220 18% 15%;
+  --muted-foreground: 215 16% 60%;
+  --accent: 188 95% 55%;
+  --accent-foreground: 222 47% 8%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 24% 96%;
+  --border: 220 18% 18%;
+  --input: 220 18% 18%;
+  --ring: 188 95% 55%;
+  --radius: 0.4rem;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1200px 700px at 78% -10%, hsl(200 70% 14% / 0.55), transparent 60%),
+    radial-gradient(900px 600px at 8% 110%, hsl(265 45% 14% / 0.45), transparent 55%),
+    hsl(var(--background));
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' 1;
+}
+
+/* Faint engineering grid texture behind the panels. */
+.bg-grid {
+  background-image:
+    linear-gradient(hsl(210 40% 50% / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(210 40% 50% / 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.panel {
+  background: linear-gradient(180deg, hsl(222 28% 11% / 0.9), hsl(222 30% 9% / 0.92));
+  border: 1px solid hsl(var(--border));
+  backdrop-filter: blur(10px);
+}
+
+.accent-glow {
+  box-shadow: 0 0 0 1px hsl(var(--accent) / 0.25), 0 0 24px hsl(var(--accent) / 0.12);
+}
+
+/* Slim custom scrollbars inside control panels. */
+.scroll-slim::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: hsl(220 16% 26%);
+  border-radius: 8px;
+}
+.scroll-slim::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 16% 34%);
+}
+.scroll-slim::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
