@@ -1,5 +1,3 @@
-(This project is still under construction!)
-
 # SMPL-X Viewer
 
 An interactive, browser-based viewer for the **SMPL-X** parametric human body model.
@@ -78,22 +76,21 @@ whenever you want to refresh it.
 ## Project layout
 
 ```
-main/
-  src/
-    smplx/
-      npy.ts          # .npy / .npz parsers (NumPy dtypes, zip via fflate)
-      skeleton.ts     # joint names, hand joint ranges, curated pose joint groups
-      smplxModel.ts   # SmplxModel: load + forward pass (shape/pose/LBS) + caching
-      params.ts       # ParamState, buildPose (deg→rad, hand mean, finger curl), presets
-    components/
-      threeViewer.ts  # imperative three.js scene (renderer, lights, mesh, skeleton)
-      Viewer.tsx      # React wrapper around ThreeViewer
-      ControlPanel.tsx# Shape / Pose / Face / View tabbed controls
-      ModelLoader.tsx # drag-drop .npz loader
-      ParamSlider.tsx # labeled slider with mono readout
-    hooks/
-      useSmplxGeometry.ts  # recompute vertices on param change (rAF-coalesced)
-    App.tsx           # layout + state wiring
+src/
+  smplx/
+    npy.ts          # .npy / .npz parsers (NumPy dtypes, zip via fflate)
+    skeleton.ts     # joint names, hand joint ranges, curated pose joint groups
+    smplxModel.ts   # SmplxModel: load + forward pass (shape/pose/LBS) + caching
+    params.ts       # ParamState, buildPose (deg→rad, hand mean, finger curl), presets
+  components/
+    threeViewer.ts  # imperative three.js scene (renderer, lights, mesh, skeleton)
+    Viewer.tsx      # React wrapper around ThreeViewer
+    ControlPanel.tsx# Shape / Pose / Face / View tabbed controls
+    ModelLoader.tsx # drag-drop .npz loader
+    ParamSlider.tsx # labeled slider with mono readout
+  hooks/
+    useSmplxGeometry.ts  # recompute vertices on param change (rAF-coalesced)
+  App.tsx           # layout + state wiring
 ```
 
 ---
