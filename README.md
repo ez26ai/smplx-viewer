@@ -52,6 +52,7 @@ so they are not included here. To use the viewer:
 Requires Node 18+ and [pnpm](https://pnpm.io).
 
 ```bash
+cd main
 pnpm install
 pnpm dev        # start the dev server with hot reload (your edits show instantly)
 pnpm build      # type-check + production build into dist/ (multi-file, for hosting)
