@@ -1,6 +1,6 @@
 (This project is still under construction!)
 
-**Webpage: https://enshenzhu.github.io/smplx-viewer/**
+**Webpage: https://ez26ai.github.io/smplx-viewer/**
 
 # SMPL-X Viewer
 
