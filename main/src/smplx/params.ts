@@ -74,7 +74,7 @@ export const PRESETS: Preset[] = [
     apply: (s) => ({
       ...s,
       global: [0, 0, 0],
-      joints: { 16: [0, 0, 55], 17: [0, 0, -55], 18: [0, 0, 15], 19: [0, 0, -15] },
+      joints: { 16: [0, 0, -55], 17: [0, 0, 55], 18: [0, 0, 15], 19: [0, 0, -15] },
       leftHandCurl: 20,
       rightHandCurl: 20,
     }),
@@ -83,7 +83,7 @@ export const PRESETS: Preset[] = [
     name: 'Wave',
     apply: (s) => ({
       ...s,
-      joints: { 16: [0, 0, 50], 17: [0, 0, -95], 19: [40, -30, -10], 21: [0, 0, -10] },
+      joints: { 16: [0, 0, 40], 17: [0, 0, -40], 19: [40, -30, -10], 21: [0, 0, -10] },
       leftHandCurl: 25,
       rightHandCurl: 0,
     }),
