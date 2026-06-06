@@ -78,6 +78,39 @@ whenever you want to refresh it.
 
 ---
 
+## Analytics (optional)
+
+The app can report page views to **Google Analytics 4**. It is **off by default** and
+only activates when you supply a Measurement ID at build time, so `pnpm dev` and any
+build without the ID stay analytics-free.
+
+1. In Google Analytics, create a **GA4 property** and a **Web data stream**, then copy
+   its **Measurement ID** (looks like `G-XXXXXXXXXX`):
+   Admin → Data streams → your web stream → Measurement ID.
+2. Copy `.env.example` to `.env` and set the ID:
+   ```bash
+   cp .env.example .env
+   # then edit .env:  VITE_GA_ID=G-XXXXXXXXXX
+   ```
+3. Rebuild. The ID is baked in at build time:
+   ```bash
+   pnpm build      # multi-file (hosted)   OR
+   pnpm bundle     # standalone smplx-viewer.html
+   ```
+   (Or inline without a file: `VITE_GA_ID=G-XXXXXXXXXX pnpm bundle`.)
+
+Notes:
+- Analytics only runs over **http(s)** — opening the standalone file from disk
+  (`file://`) skips it, since there is no domain to attribute traffic to. Host the
+  page (or the single file) on a real URL to collect data.
+- The Measurement ID is **not a secret**; it is safe to expose in client-side code.
+- GA only ever sees page views / events — **never your model file**, which is still
+  parsed entirely in the browser and never uploaded.
+- Depending on where your visitors are (EU/UK, etc.), GA's cookies may require a
+  **consent notice**. Add one if that applies to your audience.
+
+---
+
 ## Project layout
 
 ```
