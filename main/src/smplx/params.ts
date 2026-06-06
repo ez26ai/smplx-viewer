@@ -83,9 +83,9 @@ export const PRESETS: Preset[] = [
     name: 'Wave',
     apply: (s) => ({
       ...s,
-      joints: { 16: [0, 0, 40], 17: [0, 0, -40], 19: [40, -30, -10], 21: [0, 0, -10] },
-      leftHandCurl: 25,
-      rightHandCurl: 0,
+      joints: { 16: [0, 0, 40], 17: [0, 0, -40], 19: [-90, 0, 20], 20: [-90, 0, -20] },
+      leftHandCurl: 35,
+      rightHandCurl: 35,
     }),
   },
   {
