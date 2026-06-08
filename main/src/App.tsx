@@ -105,7 +105,7 @@ function App() {
       )}
 
       <footer className="flex shrink-0 items-center justify-center border-t border-border/60 px-5 py-2 font-mono text-[10px] tracking-[0.15em] text-muted-foreground/70 backdrop-blur-sm">
-        © {new Date().getFullYear()} Enshen Zhu — All rights reserved.
+        © {new Date().getFullYear()} Enshen Zhu — All rights reserved. Contact enshen.zhu26@gmail.com if you have any questions.
       </footer>
     </div>
   );

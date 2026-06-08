@@ -29,16 +29,18 @@ export function initAnalytics(): void {
   }
 
   // Inject the gtag.js library.
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
-  document.head.appendChild(script);
+  const gtm_script = document.createElement('script');
+  gtm_script.async = true;
+  gtm_script.src = `https://www.googletagmanager.com`;
+  document.head.appendChild(gtm_script);
 
   // Standard gtag bootstrap.
+  const gtag_script = document.createElement('script');
+  gtag_script.textContent = `
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
-  };
+  function gtag(){dataLayer.push(arguments);}
   window.gtag('js', new Date());
-  window.gtag('config', id);
+  window.gtag('config', '${id}');
+  `;
+  document.head.appendChild(gtag_script);
 }
