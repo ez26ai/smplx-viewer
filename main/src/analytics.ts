@@ -31,7 +31,7 @@ export function initAnalytics(): void {
   // Inject the gtag.js library.
   const gtm_script = document.createElement('script');
   gtm_script.async = true;
-  gtm_script.src = `https://www.googletagmanager.com`;
+  gtm_script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
   document.head.appendChild(gtm_script);
 
   // Standard gtag bootstrap.
