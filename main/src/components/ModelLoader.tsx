@@ -94,7 +94,7 @@ export function ModelLoader({
           <p>
             The SMPL-X model is licensed for research. Register and download the
             <span className="font-mono text-foreground/90"> SMPL-X</span> models from
-            <span className="font-mono text-foreground/90"> smpl-x.is.tue.mpg.de</span>, then use
+            <a className="font-mono text-foreground/90" href="https://smpl-x.is.tue.mpg.de/"> HERE</a>, then use
             the file named like <span className="font-mono text-foreground/90">SMPLX_NEUTRAL.npz</span>.
           </p>
         </div>
